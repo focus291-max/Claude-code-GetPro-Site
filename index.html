@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GETPRO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600&family=Heebo:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header id="header" class="site-header">
+    <div class="container site-header__inner">
+      <a href="#hero" class="logo" aria-label="GetPRO — דף הבית">
+        <span class="logo__get">Get</span><span class="logo__pro">PRO</span>
+      </a>
+
+      <nav class="site-nav" aria-label="ניווט ראשי">
+        <ul class="site-nav__list">
+          <li><a href="#services">שירותים</a></li>
+          <li><a href="#gallery">גלריה</a></li>
+          <li><a href="#clients">לקוחות</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__actions">
+        <a href="tel:0723341781" class="btn btn--primary btn--call" aria-label="חייגו 072-334-1781">
+          <span aria-hidden="true">📞</span>
+          <span>חייגו 072-334-1781</span>
+        </a>
+        <a href="tel:0723341781" class="icon-btn icon-btn--phone" aria-label="חייגו אלינו">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <button type="button" class="icon-btn nav-toggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" hidden></div>
+  <aside id="mobile-drawer" class="drawer" aria-label="תפריט נייד" aria-hidden="true">
+    <div class="drawer__header">
+      <span class="logo">
+        <span class="logo__get">Get</span><span class="logo__pro">PRO</span>
+      </span>
+      <button type="button" class="icon-btn drawer__close" aria-label="סגירת תפריט">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav aria-label="ניווט נייד">
+      <ul class="drawer__list">
+        <li><a href="#services">שירותים</a></li>
+        <li><a href="#gallery">גלריה</a></li>
+        <li><a href="#clients">לקוחות</a></li>
+        <li><a href="#contact">צור קשר</a></li>
+      </ul>
+    </nav>
+    <a href="tel:0723341781" class="btn btn--primary drawer__cta">חייגו 072-334-1781</a>
+  </aside>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero__inner">
+        <p class="eyebrow">
+          <span class="dot dot--cyan" aria-hidden="true"></span>
+          <span class="dot dot--magenta" aria-hidden="true"></span>
+          <span class="dot dot--blue" aria-hidden="true"></span>
+          מסכי LED · מאז 2015
+        </p>
+        <h1 class="hero__title">מסכי LED שמשדרגים כל אירוע, הופעה ועסק</h1>
+        <p class="hero__subhead">
+          השכרה ומכירה של מסכי LED · מסכים להופעות ובמות · שילוט מואר.
+          תכנון, התקנה וליווי מקצועי — מהרעיון ועד האירוע.
+        </p>
+        <div class="hero__cta">
+          <a href="tel:0723341781" class="btn btn--primary btn--lg">חייגו 072-334-1781</a>
+          <a href="#contact" class="btn btn--outline btn--lg">קבלת הצעה</a>
+        </div>
+        <p class="hero__trust">ניסיון של 10 שנים · שירות בכל הארץ</p>
+      </div>
+    </section>
+
+    <section id="finder" class="finder" aria-labelledby="finder-title">
+      <div class="container">
+        <div class="finder__card">
+          <div class="finder__head">
+            <h2 id="finder-title" class="finder__title">מה אתם מחפשים?</h2>
+            <p class="finder__sub">בחרו סוג שירות או אירוע — ונכוון אתכם לפתרון הנכון.</p>
+          </div>
+
+          <form class="finder__form" onsubmit="return false;" novalidate>
+            <div class="field">
+              <label for="finder-service" class="field__label">סוג שירות</label>
+              <div class="field__control">
+                <select id="finder-service" class="field__select">
+                  <option>השכרת מסכי LED</option>
+                  <option>מכירת מסכי LED</option>
+                  <option>מסכים להופעות ובמות</option>
+                  <option>שילוט מואר</option>
+                </select>
+                <span class="field__chev" aria-hidden="true">▾</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="finder-event" class="field__label">סוג אירוע</label>
+              <div class="field__control">
+                <select id="finder-event" class="field__select">
+                  <option>חתונה</option>
+                  <option>כנס ותערוכה</option>
+                  <option>הופעה ומופע</option>
+                  <option>פסטיבל</option>
+                  <option>אירוע עסקי</option>
+                  <option>חנות ופרסום</option>
+                </select>
+                <span class="field__chev" aria-hidden="true">▾</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="finder-area" class="field__label">אזור</label>
+              <div class="field__control">
+                <select id="finder-area" class="field__select">
+                  <option>כל הארץ</option>
+                  <option>צפון</option>
+                  <option>מרכז</option>
+                  <option>דרום</option>
+                  <option>ירושלים</option>
+                </select>
+                <span class="field__chev" aria-hidden="true">▾</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg finder__submit" data-scroll-to="#services">חיפוש</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section section--alt services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow eyebrow--light">
+            <span class="dot dot--cyan" aria-hidden="true"></span>
+            <span class="dot dot--magenta" aria-hidden="true"></span>
+            <span class="dot dot--blue" aria-hidden="true"></span>
+            השירותים שלנו
+          </p>
+          <h2 id="services-title" class="section-head__title">פתרון מלא של מסכי LED</h2>
+          <p class="section-head__sub">לאירועים, להופעות ולעסקים — מתכנון ועד הקמה, תפעול וליווי.</p>
+          <span class="rgb-rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="services__grid">
+          <article class="service-card">
+            <div class="service-card__media">
+              <img src="images/events.jpg" alt="מסכי LED באירוע" loading="lazy" />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">מסכי LED לאירועים</h3>
+              <p class="service-card__desc">הופכים כל אולם, חתונה או כנס לחוויה ויזואלית, עם תוכן מותאם לאירוע.</p>
+              <ul class="service-card__list">
+                <li>כל צורה וגודל</li>
+                <li>התקנה וצוות במקום</li>
+                <li>תוכן מותאם</li>
+              </ul>
+              <a href="#contact" class="service-card__link">לפרטים <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__media">
+              <img src="images/rental.jpg" alt="השכרת מסכי LED" loading="lazy" />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">השכרת מסכי LED</h3>
+              <p class="service-card__desc">השכרה לאירוע, להופעה או לתערוכה — כולל תכנון, הקמה, תפעול ופירוק.</p>
+              <ul class="service-card__list">
+                <li>השכרה יומית/אירועית</li>
+                <li>הקמה ותפעול</li>
+                <li>ליווי טכני מלא</li>
+              </ul>
+              <a href="#contact" class="service-card__link">לפרטים <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__media">
+              <img src="images/shows.jpg" alt="מסכי LED להופעות ובמות" loading="lazy" />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">מסכים להופעות ובמות</h3>
+              <p class="service-card__desc">עיצוב במה דינמי וקירות וידאו שמשדרגים כל מופע, עם תפאורת וידאו ייחודית.</p>
+              <ul class="service-card__list">
+                <li>עיצוב במה</li>
+                <li>קירות וידאו</li>
+                <li>תוכן בהתאמה אישית</li>
+              </ul>
+              <a href="#contact" class="service-card__link">לפרטים <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__media">
+              <img src="images/signage.jpg" alt="שילוט מואר ומסכי פרסום" loading="lazy" />
+            </div>
+            <div class="service-card__body">
+              <h3 class="service-card__title">שילוט מואר ומסכי פרסום</h3>
+              <p class="service-card__desc">שילוט דיגיטלי לחנויות, נקודות מכירה ופרסום פנים וחוץ — עם שליטה מרחוק.</p>
+              <ul class="service-card__list">
+                <li>פנים וחוץ</li>
+                <li>שליטה מרחוק</li>
+                <li>עמידות גבוהה</li>
+              </ul>
+              <a href="#contact" class="service-card__link">לפרטים <span aria-hidden="true">←</span></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="models">
+          <header class="models__head">
+            <p class="eyebrow eyebrow--light">
+              <span class="dot dot--cyan" aria-hidden="true"></span>
+              <span class="dot dot--magenta" aria-hidden="true"></span>
+              <span class="dot dot--blue" aria-hidden="true"></span>
+              דגמי מסכים לפרסום
+            </p>
+            <p class="models__caption">מגוון רחב של דגמים לשימוש פנים וחוץ · פנו אלינו לייעוץ ראשוני חינם.</p>
+          </header>
+
+          <div class="models__grid">
+            <article class="model-tile">
+              <div class="model-tile__media">
+                <img src="images/panel-p6.jpeg" alt="מסך LED P.6" loading="lazy" />
+              </div>
+              <div class="model-tile__body">
+                <h3 class="model-tile__name">מסך LED · P.6</h3>
+                <div class="model-tile__stat">
+                  <span class="model-tile__num">25,600</span>
+                  <span class="model-tile__unit">פיקסל RGB למ״ר</span>
+                </div>
+                <p class="model-tile__note">לפרסום פנים · איכות צפייה גבוהה</p>
+              </div>
+            </article>
+
+            <article class="model-tile">
+              <div class="model-tile__media">
+                <img src="images/panel-p10.jpeg" alt="מסך LED P.10" loading="lazy" />
+              </div>
+              <div class="model-tile__body">
+                <h3 class="model-tile__name">מסך LED · P.10</h3>
+                <div class="model-tile__stat">
+                  <span class="model-tile__num">9,216</span>
+                  <span class="model-tile__unit">פיקסל RGB למ״ר</span>
+                </div>
+                <p class="model-tile__note">לפרסום חוץ · עוצמת הארה גבוהה</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow eyebrow--light">
+            <span class="dot dot--cyan" aria-hidden="true"></span>
+            <span class="dot dot--magenta" aria-hidden="true"></span>
+            <span class="dot dot--blue" aria-hidden="true"></span>
+            גלריה
+          </p>
+          <h2 id="gallery-title" class="section-head__title">עבודות נבחרות</h2>
+          <p class="section-head__sub">מבחר מהאירועים, ההופעות והפרויקטים שלנו.</p>
+          <span class="rgb-rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="filters" role="tablist" aria-label="סינון גלריה">
+          <button type="button" class="chip is-active" data-filter="all" role="tab" aria-selected="true">הכל</button>
+          <button type="button" class="chip" data-filter="events" role="tab" aria-selected="false">אירועים</button>
+          <button type="button" class="chip" data-filter="shows" role="tab" aria-selected="false">הופעות</button>
+          <button type="button" class="chip" data-filter="signage" role="tab" aria-selected="false">שילוט</button>
+        </div>
+
+        <div class="masonry" id="gallery-grid">
+          <figure class="tile" data-category="shows">
+            <img src="images/g1.png" alt="תחרות מחול uTALENT" loading="lazy" />
+            <figcaption>תחרות מחול · uTALENT</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g2.jpg" alt="מופע מחול עם קיר וידאו" loading="lazy" />
+            <figcaption>מופע מחול · קיר וידאו</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g3.png" alt="במת תחרות בארנה" loading="lazy" />
+            <figcaption>במת תחרות · ארנה</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g4.jpg" alt="מופע עם תפאורת מנדלה" loading="lazy" />
+            <figcaption>מופע · תפאורת מנדלה</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g5.jpg" alt="מופע עם קיר כוכבים" loading="lazy" />
+            <figcaption>מופע · קיר כוכבים</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g6.jpg" alt="מסיבת סיום עם עמודי LED" loading="lazy" />
+            <figcaption>מסיבת סיום · עמודי LED</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g7.jpg" alt="מופע באולם תיאטרון" loading="lazy" />
+            <figcaption>מופע · אולם תיאטרון</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g8.jpg" alt="תפאורת וידאו של נוף" loading="lazy" />
+            <figcaption>תפאורת וידאו · נוף</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g9.jpg" alt="מופע ילדים עם קיר פרחים" loading="lazy" />
+            <figcaption>מופע ילדים · קיר פרחים</figcaption>
+          </figure>
+          <figure class="tile" data-category="events">
+            <img src="images/g10.jpg" alt="אירוע חוץ עם במה" loading="lazy" />
+            <figcaption>אירוע חוץ · במה</figcaption>
+          </figure>
+          <figure class="tile" data-category="events">
+            <img src="images/g11.jpg" alt="הקמת במה באירוע חוץ" loading="lazy" />
+            <figcaption>אירוע חוץ · הקמת במה</figcaption>
+          </figure>
+          <figure class="tile" data-category="shows">
+            <img src="images/g12.jpg" alt="מופע באולם תיאטרון" loading="lazy" />
+            <figcaption>מופע · אולם תיאטרון</figcaption>
+          </figure>
+        </div>
+
+        <div id="clients" class="clients">
+          <p class="eyebrow eyebrow--light clients__label">
+            <span class="dot dot--cyan" aria-hidden="true"></span>
+            <span class="dot dot--magenta" aria-hidden="true"></span>
+            <span class="dot dot--blue" aria-hidden="true"></span>
+            בין לקוחותינו
+          </p>
+          <ul class="clients__list">
+            <li>Hangar 17</li>
+            <li>Barocco Bar</li>
+            <li>Raygler Israel</li>
+            <li>Press</li>
+            <li>Rich</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--alt contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow eyebrow--light">
+            <span class="dot dot--cyan" aria-hidden="true"></span>
+            <span class="dot dot--magenta" aria-hidden="true"></span>
+            <span class="dot dot--blue" aria-hidden="true"></span>
+            צור קשר
+          </p>
+          <h2 id="contact-title" class="section-head__title">קבלו הצעה</h2>
+          <p class="section-head__sub">השאירו פרטים ונחזור אליכם — או חייגו עכשיו.</p>
+          <span class="rgb-rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="contact__grid">
+          <div class="contact__form-card">
+            <form class="contact-form" novalidate>
+              <div class="contact-form__row">
+                <div class="field">
+                  <label for="cf-name" class="field__label">שם מלא</label>
+                  <input type="text" id="cf-name" name="name" class="field__input" autocomplete="name" />
+                </div>
+                <div class="field">
+                  <label for="cf-phone" class="field__label">טלפון</label>
+                  <input type="tel" id="cf-phone" name="phone" class="field__input" autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="contact-form__row">
+                <div class="field">
+                  <label for="cf-email" class="field__label">דוא״ל</label>
+                  <input type="email" id="cf-email" name="email" class="field__input" autocomplete="email" />
+                </div>
+                <div class="field">
+                  <label for="cf-service" class="field__label">סוג שירות</label>
+                  <div class="field__control">
+                    <select id="cf-service" name="service" class="field__select">
+                      <option>מסכי LED לאירועים</option>
+                      <option>השכרת מסכי LED</option>
+                      <option>מסכים להופעות ובמות</option>
+                      <option>שילוט מואר</option>
+                    </select>
+                    <span class="field__chev" aria-hidden="true">▾</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-form__row">
+                <div class="field">
+                  <label for="cf-date" class="field__label">תאריך האירוע</label>
+                  <input type="date" id="cf-date" name="date" class="field__input" />
+                </div>
+                <div class="field">
+                  <label for="cf-city" class="field__label">עיר / אזור</label>
+                  <input type="text" id="cf-city" name="city" class="field__input" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="cf-message" class="field__label">הודעה</label>
+                <textarea id="cf-message" name="message" class="field__input field__textarea" rows="4"></textarea>
+              </div>
+
+              <label class="field__check">
+                <input type="checkbox" id="cf-consent" name="consent" required />
+                <span>אני מאשר/ת שתחזרו אליי בנוגע לפנייה.</span>
+              </label>
+
+              <button type="submit" class="btn btn--primary btn--lg contact-form__submit">שליחה</button>
+
+              <p class="contact-form__success" id="cf-success" role="status" hidden>
+                תודה! קיבלנו את הפנייה ונחזור אליכם בהקדם.
+              </p>
+            </form>
+          </div>
+
+          <aside class="contact__call">
+            <h3 class="contact__call-title">מעדיפים לדבר עכשיו?</h3>
+            <p class="contact__call-text">אנחנו כאן לכל שאלה, ייעוץ והתאמת פתרון לאירוע שלכם.</p>
+            <a href="tel:0723341781" class="contact__phone" dir="ltr">072-334-1781</a>
+            <p class="contact__meta">שירות בכל הארץ · ניסיון של 10 שנים · ייעוץ ראשוני חינם</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__brand">
+          <span class="logo">
+            <span class="logo__get">Get</span><span class="logo__pro">PRO</span>
+          </span>
+          <p class="footer__tagline">מסכי LED, שילוט מואר והשכרת מסכים לאירועים ולעסקים — מאז 2015.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">שירותים</h4>
+          <ul class="footer__list">
+            <li><a href="#services">מסכי LED לאירועים</a></li>
+            <li><a href="#services">השכרת מסכי LED</a></li>
+            <li><a href="#services">מסכים להופעות ובמות</a></li>
+            <li><a href="#services">שילוט מואר</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">ניווט</h4>
+          <ul class="footer__list">
+            <li><a href="#services">שירותים</a></li>
+            <li><a href="#gallery">גלריה</a></li>
+            <li><a href="#clients">לקוחות</a></li>
+            <li><a href="#contact">צור קשר</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__heading">צרו קשר</h4>
+          <ul class="footer__list">
+            <li><a href="tel:0723341781" dir="ltr">072-334-1781</a></li>
+            <li>שירות בכל הארץ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 GetPro · כל הזכויות שמורות</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="tel:0723341781" class="fab-call" aria-label="חייגו אלינו">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
