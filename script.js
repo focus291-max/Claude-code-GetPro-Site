@@ -37,8 +37,9 @@
         var filter = chip.getAttribute("data-filter");
 
         chips.forEach(function (c) {
-          c.classList.toggle("is-active", c === chip);
-          c.setAttribute("aria-selected", c === chip ? "true" : "false");
+          var active = c === chip;
+          c.classList.toggle("is-active", active);
+          c.setAttribute("aria-pressed", active ? "true" : "false");
         });
 
         tiles.forEach(function (tile) {
@@ -51,11 +52,13 @@
   }
 
   function initFinder() {
-    var btn = document.querySelector(".finder__submit");
-    if (!btn) return;
-    btn.addEventListener("click", function (e) {
+    var form = document.querySelector(".finder__form");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var target = document.querySelector(btn.getAttribute("data-scroll-to") || "#services");
+      var btn = form.querySelector(".finder__submit");
+      var selector = (btn && btn.getAttribute("data-scroll-to")) || "#services";
+      var target = document.querySelector(selector);
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
